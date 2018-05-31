@@ -1,0 +1,6 @@
+framework module Pods_WYDBManager {
+  umbrella header "Pods-WYDBManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

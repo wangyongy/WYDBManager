@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B25D3459907502DF1A16AFB /* Pods_WYDBManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1082BB9F1AB91DFE4469531 /* Pods_WYDBManager.framework */; };
+		391CC089208080CB0092FB9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 391CC088208080CB0092FB9C /* AppDelegate.m */; };
+		391CC08C208080CB0092FB9C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391CC08B208080CB0092FB9C /* ViewController.m */; };
+		391CC08F208080CB0092FB9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391CC08D208080CB0092FB9C /* Main.storyboard */; };
+		391CC091208080CB0092FB9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391CC090208080CB0092FB9C /* Assets.xcassets */; };
+		391CC094208080CB0092FB9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391CC092208080CB0092FB9C /* LaunchScreen.storyboard */; };
+		391CC097208080CB0092FB9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 391CC096208080CB0092FB9C /* main.m */; };
+		391CC0A1208080CB0092FB9C /* WYDBManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 391CC0A0208080CB0092FB9C /* WYDBManagerTests.m */; };
+		391CC0AC208080CB0092FB9C /* WYDBManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 391CC0AB208080CB0092FB9C /* WYDBManagerUITests.m */; };
+		391CC0C82080947F0092FB9C /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 391CC0C72080947F0092FB9C /* libstdc++.tbd */; };
+		391CC0CB2080B2180092FB9C /* WYDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 391CC0CA2080B2180092FB9C /* WYDBTool.m */; };
+		3945FA7620A2F80F00DF38D0 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945FA7820A2F80F00DF38D0 /* FMDB.framework */; };
+		3945FA7720A2F80F00DF38D0 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945FA7920A2F80F00DF38D0 /* MJRefresh.framework */; };
+		396A35FF20ABCCBA00C0BBB1 /* directory.png in Resources */ = {isa = PBXBuildFile; fileRef = 396A35FE20ABCCBA00C0BBB1 /* directory.png */; };
+		39A23879208450880050B29F /* menuBar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A23878208450880050B29F /* menuBar1.png */; };
+		84B3B83220B2D21000C0B627 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B3B83120B2D21000C0B627 /* Person.m */; };
+		84B3B83820B2D27500C0B627 /* CopyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B3B83720B2D27500C0B627 /* CopyObject.m */; };
+		CF0FAEA820BF92450072C597 /* WYDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0FAEA720BF92450072C597 /* WYDBManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		391CC09D208080CB0092FB9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 391CC07C208080CB0092FB9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 391CC083208080CB0092FB9C;
+			remoteInfo = WYDBManager;
+		};
+		391CC0A8208080CB0092FB9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 391CC07C208080CB0092FB9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 391CC083208080CB0092FB9C;
+			remoteInfo = WYDBManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		391CC084208080CB0092FB9C /* WYDBManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYDBManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		391CC087208080CB0092FB9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		391CC088208080CB0092FB9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		391CC08A208080CB0092FB9C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		391CC08B208080CB0092FB9C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		391CC08E208080CB0092FB9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		391CC090208080CB0092FB9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		391CC093208080CB0092FB9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		391CC095208080CB0092FB9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		391CC096208080CB0092FB9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		391CC09C208080CB0092FB9C /* WYDBManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYDBManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		391CC0A0208080CB0092FB9C /* WYDBManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYDBManagerTests.m; sourceTree = "<group>"; };
+		391CC0A2208080CB0092FB9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		391CC0A7208080CB0092FB9C /* WYDBManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WYDBManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		391CC0AB208080CB0092FB9C /* WYDBManagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYDBManagerUITests.m; sourceTree = "<group>"; };
+		391CC0AD208080CB0092FB9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		391CC0C72080947F0092FB9C /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		391CC0C92080B2180092FB9C /* WYDBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYDBTool.h; sourceTree = "<group>"; };
+		391CC0CA2080B2180092FB9C /* WYDBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYDBTool.m; sourceTree = "<group>"; };
+		3945FA6C20A2ED5F00DF38D0 /* WYDBManager-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WYDBManager-PrefixHeader.pch"; sourceTree = "<group>"; };
+		3945FA7820A2F80F00DF38D0 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3945FA7920A2F80F00DF38D0 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		396A35FE20ABCCBA00C0BBB1 /* directory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directory.png; sourceTree = "<group>"; };
+		39A23878208450880050B29F /* menuBar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBar1.png; sourceTree = "<group>"; };
+		84B3B83020B2D21000C0B627 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		84B3B83120B2D21000C0B627 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		84B3B83620B2D27500C0B627 /* CopyObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyObject.h; sourceTree = "<group>"; };
+		84B3B83720B2D27500C0B627 /* CopyObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyObject.m; sourceTree = "<group>"; };
+		9208F5E18BFD2996FD0C7A8B /* Pods-WYDBManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYDBManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WYDBManager/Pods-WYDBManager.debug.xcconfig"; sourceTree = "<group>"; };
+		CF0FAEA620BF92450072C597 /* WYDBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYDBManager.h; sourceTree = "<group>"; };
+		CF0FAEA720BF92450072C597 /* WYDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYDBManager.m; sourceTree = "<group>"; };
+		EEBC39DF45C12C12D2BABC25 /* Pods-WYDBManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYDBManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-WYDBManager/Pods-WYDBManager.release.xcconfig"; sourceTree = "<group>"; };
+		F1082BB9F1AB91DFE4469531 /* Pods_WYDBManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WYDBManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		391CC081208080CB0092FB9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3945FA7620A2F80F00DF38D0 /* FMDB.framework in Frameworks */,
+				3945FA7720A2F80F00DF38D0 /* MJRefresh.framework in Frameworks */,
+				391CC0C82080947F0092FB9C /* libstdc++.tbd in Frameworks */,
+				2B25D3459907502DF1A16AFB /* Pods_WYDBManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		391CC099208080CB0092FB9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		391CC0A4208080CB0092FB9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		391CC07B208080CB0092FB9C = {
+			isa = PBXGroup;
+			children = (
+				391CC086208080CB0092FB9C /* WYDBManager */,
+				391CC09F208080CB0092FB9C /* WYDBManagerTests */,
+				391CC0AA208080CB0092FB9C /* WYDBManagerUITests */,
+				391CC085208080CB0092FB9C /* Products */,
+				567B3AB39DF6E329A6A9381E /* Pods */,
+				66413F01992D00436B97030A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		391CC085208080CB0092FB9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				391CC084208080CB0092FB9C /* WYDBManager.app */,
+				391CC09C208080CB0092FB9C /* WYDBManagerTests.xctest */,
+				391CC0A7208080CB0092FB9C /* WYDBManagerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		391CC086208080CB0092FB9C /* WYDBManager */ = {
+			isa = PBXGroup;
+			children = (
+				391CC087208080CB0092FB9C /* AppDelegate.h */,
+				391CC088208080CB0092FB9C /* AppDelegate.m */,
+				391CC08A208080CB0092FB9C /* ViewController.h */,
+				391CC08B208080CB0092FB9C /* ViewController.m */,
+				84B3B83020B2D21000C0B627 /* Person.h */,
+				84B3B83120B2D21000C0B627 /* Person.m */,
+				84B3B83620B2D27500C0B627 /* CopyObject.h */,
+				84B3B83720B2D27500C0B627 /* CopyObject.m */,
+				849D907520B2BE630009DAE1 /* WYDBManager */,
+				391CC08D208080CB0092FB9C /* Main.storyboard */,
+				3945FA6C20A2ED5F00DF38D0 /* WYDBManager-PrefixHeader.pch */,
+				396A35FD20ABCCAA00C0BBB1 /* sources */,
+				391CC090208080CB0092FB9C /* Assets.xcassets */,
+				391CC092208080CB0092FB9C /* LaunchScreen.storyboard */,
+				391CC095208080CB0092FB9C /* Info.plist */,
+				391CC096208080CB0092FB9C /* main.m */,
+			);
+			path = WYDBManager;
+			sourceTree = "<group>";
+		};
+		391CC09F208080CB0092FB9C /* WYDBManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				391CC0A0208080CB0092FB9C /* WYDBManagerTests.m */,
+				391CC0A2208080CB0092FB9C /* Info.plist */,
+			);
+			path = WYDBManagerTests;
+			sourceTree = "<group>";
+		};
+		391CC0AA208080CB0092FB9C /* WYDBManagerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				391CC0AB208080CB0092FB9C /* WYDBManagerUITests.m */,
+				391CC0AD208080CB0092FB9C /* Info.plist */,
+			);
+			path = WYDBManagerUITests;
+			sourceTree = "<group>";
+		};
+		396A35FD20ABCCAA00C0BBB1 /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				39A23878208450880050B29F /* menuBar1.png */,
+				396A35FE20ABCCBA00C0BBB1 /* directory.png */,
+			);
+			path = sources;
+			sourceTree = "<group>";
+		};
+		567B3AB39DF6E329A6A9381E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9208F5E18BFD2996FD0C7A8B /* Pods-WYDBManager.debug.xcconfig */,
+				EEBC39DF45C12C12D2BABC25 /* Pods-WYDBManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		66413F01992D00436B97030A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3945FA7820A2F80F00DF38D0 /* FMDB.framework */,
+				3945FA7920A2F80F00DF38D0 /* MJRefresh.framework */,
+				391CC0C72080947F0092FB9C /* libstdc++.tbd */,
+				F1082BB9F1AB91DFE4469531 /* Pods_WYDBManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		849D907520B2BE630009DAE1 /* WYDBManager */ = {
+			isa = PBXGroup;
+			children = (
+				391CC0C92080B2180092FB9C /* WYDBTool.h */,
+				391CC0CA2080B2180092FB9C /* WYDBTool.m */,
+				CF0FAEA620BF92450072C597 /* WYDBManager.h */,
+				CF0FAEA720BF92450072C597 /* WYDBManager.m */,
+			);
+			path = WYDBManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		391CC083208080CB0092FB9C /* WYDBManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 391CC0B0208080CB0092FB9C /* Build configuration list for PBXNativeTarget "WYDBManager" */;
+			buildPhases = (
+				F110211B50B5F99FADC8999F /* [CP] Check Pods Manifest.lock */,
+				391CC080208080CB0092FB9C /* Sources */,
+				391CC081208080CB0092FB9C /* Frameworks */,
+				391CC082208080CB0092FB9C /* Resources */,
+				3882CA4E933A2BCB70EE706B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WYDBManager;
+			productName = WYDBManager;
+			productReference = 391CC084208080CB0092FB9C /* WYDBManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		391CC09B208080CB0092FB9C /* WYDBManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 391CC0B3208080CB0092FB9C /* Build configuration list for PBXNativeTarget "WYDBManagerTests" */;
+			buildPhases = (
+				391CC098208080CB0092FB9C /* Sources */,
+				391CC099208080CB0092FB9C /* Frameworks */,
+				391CC09A208080CB0092FB9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				391CC09E208080CB0092FB9C /* PBXTargetDependency */,
+			);
+			name = WYDBManagerTests;
+			productName = WYDBManagerTests;
+			productReference = 391CC09C208080CB0092FB9C /* WYDBManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		391CC0A6208080CB0092FB9C /* WYDBManagerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 391CC0B6208080CB0092FB9C /* Build configuration list for PBXNativeTarget "WYDBManagerUITests" */;
+			buildPhases = (
+				391CC0A3208080CB0092FB9C /* Sources */,
+				391CC0A4208080CB0092FB9C /* Frameworks */,
+				391CC0A5208080CB0092FB9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				391CC0A9208080CB0092FB9C /* PBXTargetDependency */,
+			);
+			name = WYDBManagerUITests;
+			productName = WYDBManagerUITests;
+			productReference = 391CC0A7208080CB0092FB9C /* WYDBManagerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		391CC07C208080CB0092FB9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = wangyong;
+				TargetAttributes = {
+					391CC083208080CB0092FB9C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					391CC09B208080CB0092FB9C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 391CC083208080CB0092FB9C;
+					};
+					391CC0A6208080CB0092FB9C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 391CC083208080CB0092FB9C;
+					};
+				};
+			};
+			buildConfigurationList = 391CC07F208080CB0092FB9C /* Build configuration list for PBXProject "WYDBManager" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 391CC07B208080CB0092FB9C;
+			productRefGroup = 391CC085208080CB0092FB9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				391CC083208080CB0092FB9C /* WYDBManager */,
+				391CC09B208080CB0092FB9C /* WYDBManagerTests */,
+				391CC0A6208080CB0092FB9C /* WYDBManagerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		391CC082208080CB0092FB9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				391CC094208080CB0092FB9C /* LaunchScreen.storyboard in Resources */,
+				391CC091208080CB0092FB9C /* Assets.xcassets in Resources */,
+				391CC08F208080CB0092FB9C /* Main.storyboard in Resources */,
+				396A35FF20ABCCBA00C0BBB1 /* directory.png in Resources */,
+				39A23879208450880050B29F /* menuBar1.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		391CC09A208080CB0092FB9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		391CC0A5208080CB0092FB9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3882CA4E933A2BCB70EE706B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WYDBManager/Pods-WYDBManager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CWSqlite/CWSqlite.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CWSqlite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WYDBManager/Pods-WYDBManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F110211B50B5F99FADC8999F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WYDBManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		391CC080208080CB0092FB9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B3B83220B2D21000C0B627 /* Person.m in Sources */,
+				CF0FAEA820BF92450072C597 /* WYDBManager.m in Sources */,
+				391CC08C208080CB0092FB9C /* ViewController.m in Sources */,
+				391CC097208080CB0092FB9C /* main.m in Sources */,
+				391CC0CB2080B2180092FB9C /* WYDBTool.m in Sources */,
+				84B3B83820B2D27500C0B627 /* CopyObject.m in Sources */,
+				391CC089208080CB0092FB9C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		391CC098208080CB0092FB9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				391CC0A1208080CB0092FB9C /* WYDBManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		391CC0A3208080CB0092FB9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				391CC0AC208080CB0092FB9C /* WYDBManagerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		391CC09E208080CB0092FB9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 391CC083208080CB0092FB9C /* WYDBManager */;
+			targetProxy = 391CC09D208080CB0092FB9C /* PBXContainerItemProxy */;
+		};
+		391CC0A9208080CB0092FB9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 391CC083208080CB0092FB9C /* WYDBManager */;
+			targetProxy = 391CC0A8208080CB0092FB9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		391CC08D208080CB0092FB9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				391CC08E208080CB0092FB9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		391CC092208080CB0092FB9C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				391CC093208080CB0092FB9C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		391CC0AE208080CB0092FB9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		391CC0AF208080CB0092FB9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		391CC0B1208080CB0092FB9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9208F5E18BFD2996FD0C7A8B /* Pods-WYDBManager.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3D5W4KF224;
+				GCC_INPUT_FILETYPE = automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WYDBManager/WYDBManager-PrefixHeader.pch";
+				INFOPLIST_FILE = WYDBManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = homed.Password;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		391CC0B2208080CB0092FB9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEBC39DF45C12C12D2BABC25 /* Pods-WYDBManager.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3D5W4KF224;
+				GCC_INPUT_FILETYPE = automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WYDBManager/WYDBManager-PrefixHeader.pch";
+				INFOPLIST_FILE = WYDBManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = homed.Password;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		391CC0B4208080CB0092FB9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UEX292WET3;
+				INFOPLIST_FILE = WYDBManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = homed.WYDBManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYDBManager.app/WYDBManager";
+			};
+			name = Debug;
+		};
+		391CC0B5208080CB0092FB9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UEX292WET3;
+				INFOPLIST_FILE = WYDBManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = homed.WYDBManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WYDBManager.app/WYDBManager";
+			};
+			name = Release;
+		};
+		391CC0B7208080CB0092FB9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UEX292WET3;
+				INFOPLIST_FILE = WYDBManagerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = homed.WYDBManagerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WYDBManager;
+			};
+			name = Debug;
+		};
+		391CC0B8208080CB0092FB9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UEX292WET3;
+				INFOPLIST_FILE = WYDBManagerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = homed.WYDBManagerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WYDBManager;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		391CC07F208080CB0092FB9C /* Build configuration list for PBXProject "WYDBManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				391CC0AE208080CB0092FB9C /* Debug */,
+				391CC0AF208080CB0092FB9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		391CC0B0208080CB0092FB9C /* Build configuration list for PBXNativeTarget "WYDBManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				391CC0B1208080CB0092FB9C /* Debug */,
+				391CC0B2208080CB0092FB9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		391CC0B3208080CB0092FB9C /* Build configuration list for PBXNativeTarget "WYDBManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				391CC0B4208080CB0092FB9C /* Debug */,
+				391CC0B5208080CB0092FB9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		391CC0B6208080CB0092FB9C /* Build configuration list for PBXNativeTarget "WYDBManagerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				391CC0B7208080CB0092FB9C /* Debug */,
+				391CC0B8208080CB0092FB9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 391CC07C208080CB0092FB9C /* Project object */;
+}

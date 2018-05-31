@@ -1,0 +1,17 @@
+//
+//  WYDBManager-PrefixHeader.pch
+//  WYDBManager
+//
+//  Created by wangyong on 2018/5/9.
+//  Copyright © 2018年 ipanel. All rights reserved.
+//
+
+#ifndef WYDBManager_PrefixHeader_pch
+#define WYDBManager_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* WYDBManager_PrefixHeader_pch */
+#import "WYDBManager.h"
+#import "CopyObject.h"

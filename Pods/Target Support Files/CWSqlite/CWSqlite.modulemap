@@ -1,0 +1,6 @@
+framework module CWSqlite {
+  umbrella header "CWSqlite-umbrella.h"
+
+  export *
+  module * { export * }
+}

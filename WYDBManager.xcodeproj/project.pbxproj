@@ -17,14 +17,12 @@
 		391CC0A1208080CB0092FB9C /* WYDBManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 391CC0A0208080CB0092FB9C /* WYDBManagerTests.m */; };
 		391CC0AC208080CB0092FB9C /* WYDBManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 391CC0AB208080CB0092FB9C /* WYDBManagerUITests.m */; };
 		391CC0C82080947F0092FB9C /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 391CC0C72080947F0092FB9C /* libstdc++.tbd */; };
-		391CC0CB2080B2180092FB9C /* WYDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 391CC0CA2080B2180092FB9C /* WYDBTool.m */; };
 		3945FA7620A2F80F00DF38D0 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945FA7820A2F80F00DF38D0 /* FMDB.framework */; };
 		3945FA7720A2F80F00DF38D0 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3945FA7920A2F80F00DF38D0 /* MJRefresh.framework */; };
 		396A35FF20ABCCBA00C0BBB1 /* directory.png in Resources */ = {isa = PBXBuildFile; fileRef = 396A35FE20ABCCBA00C0BBB1 /* directory.png */; };
 		39A23879208450880050B29F /* menuBar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A23878208450880050B29F /* menuBar1.png */; };
 		84B3B83220B2D21000C0B627 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B3B83120B2D21000C0B627 /* Person.m */; };
 		84B3B83820B2D27500C0B627 /* CopyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B3B83720B2D27500C0B627 /* CopyObject.m */; };
-		CF0FAEA820BF92450072C597 /* WYDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0FAEA720BF92450072C597 /* WYDBManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +60,6 @@
 		391CC0AB208080CB0092FB9C /* WYDBManagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYDBManagerUITests.m; sourceTree = "<group>"; };
 		391CC0AD208080CB0092FB9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		391CC0C72080947F0092FB9C /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		391CC0C92080B2180092FB9C /* WYDBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYDBTool.h; sourceTree = "<group>"; };
-		391CC0CA2080B2180092FB9C /* WYDBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYDBTool.m; sourceTree = "<group>"; };
 		3945FA6C20A2ED5F00DF38D0 /* WYDBManager-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WYDBManager-PrefixHeader.pch"; sourceTree = "<group>"; };
 		3945FA7820A2F80F00DF38D0 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3945FA7920A2F80F00DF38D0 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,8 +70,6 @@
 		84B3B83620B2D27500C0B627 /* CopyObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyObject.h; sourceTree = "<group>"; };
 		84B3B83720B2D27500C0B627 /* CopyObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyObject.m; sourceTree = "<group>"; };
 		9208F5E18BFD2996FD0C7A8B /* Pods-WYDBManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYDBManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WYDBManager/Pods-WYDBManager.debug.xcconfig"; sourceTree = "<group>"; };
-		CF0FAEA620BF92450072C597 /* WYDBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYDBManager.h; sourceTree = "<group>"; };
-		CF0FAEA720BF92450072C597 /* WYDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYDBManager.m; sourceTree = "<group>"; };
 		EEBC39DF45C12C12D2BABC25 /* Pods-WYDBManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYDBManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-WYDBManager/Pods-WYDBManager.release.xcconfig"; sourceTree = "<group>"; };
 		F1082BB9F1AB91DFE4469531 /* Pods_WYDBManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WYDBManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,7 +136,6 @@
 				84B3B83120B2D21000C0B627 /* Person.m */,
 				84B3B83620B2D27500C0B627 /* CopyObject.h */,
 				84B3B83720B2D27500C0B627 /* CopyObject.m */,
-				849D907520B2BE630009DAE1 /* WYDBManager */,
 				391CC08D208080CB0092FB9C /* Main.storyboard */,
 				3945FA6C20A2ED5F00DF38D0 /* WYDBManager-PrefixHeader.pch */,
 				396A35FD20ABCCAA00C0BBB1 /* sources */,
@@ -199,17 +192,6 @@
 				F1082BB9F1AB91DFE4469531 /* Pods_WYDBManager.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		849D907520B2BE630009DAE1 /* WYDBManager */ = {
-			isa = PBXGroup;
-			children = (
-				391CC0C92080B2180092FB9C /* WYDBTool.h */,
-				391CC0CA2080B2180092FB9C /* WYDBTool.m */,
-				CF0FAEA620BF92450072C597 /* WYDBManager.h */,
-				CF0FAEA720BF92450072C597 /* WYDBManager.m */,
-			);
-			path = WYDBManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,10 +375,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B3B83220B2D21000C0B627 /* Person.m in Sources */,
-				CF0FAEA820BF92450072C597 /* WYDBManager.m in Sources */,
 				391CC08C208080CB0092FB9C /* ViewController.m in Sources */,
 				391CC097208080CB0092FB9C /* main.m in Sources */,
-				391CC0CB2080B2180092FB9C /* WYDBTool.m in Sources */,
 				84B3B83820B2D27500C0B627 /* CopyObject.m in Sources */,
 				391CC089208080CB0092FB9C /* AppDelegate.m in Sources */,
 			);

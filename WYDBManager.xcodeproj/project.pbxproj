@@ -23,6 +23,8 @@
 		39A23879208450880050B29F /* menuBar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A23878208450880050B29F /* menuBar1.png */; };
 		84B3B83220B2D21000C0B627 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B3B83120B2D21000C0B627 /* Person.m */; };
 		84B3B83820B2D27500C0B627 /* CopyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B3B83720B2D27500C0B627 /* CopyObject.m */; };
+		CF624C9320BFF6CA00D50AEF /* WYDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CF624C8F20BFF6CA00D50AEF /* WYDBTool.m */; };
+		CF624C9420BFF6CA00D50AEF /* WYDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF624C9020BFF6CA00D50AEF /* WYDBManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		84B3B83620B2D27500C0B627 /* CopyObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyObject.h; sourceTree = "<group>"; };
 		84B3B83720B2D27500C0B627 /* CopyObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyObject.m; sourceTree = "<group>"; };
 		9208F5E18BFD2996FD0C7A8B /* Pods-WYDBManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYDBManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WYDBManager/Pods-WYDBManager.debug.xcconfig"; sourceTree = "<group>"; };
+		CF624C8F20BFF6CA00D50AEF /* WYDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDBTool.m; sourceTree = "<group>"; };
+		CF624C9020BFF6CA00D50AEF /* WYDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDBManager.m; sourceTree = "<group>"; };
+		CF624C9120BFF6CA00D50AEF /* WYDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDBManager.h; sourceTree = "<group>"; };
+		CF624C9220BFF6CA00D50AEF /* WYDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDBTool.h; sourceTree = "<group>"; };
 		EEBC39DF45C12C12D2BABC25 /* Pods-WYDBManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYDBManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-WYDBManager/Pods-WYDBManager.release.xcconfig"; sourceTree = "<group>"; };
 		F1082BB9F1AB91DFE4469531 /* Pods_WYDBManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WYDBManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +142,7 @@
 				84B3B83120B2D21000C0B627 /* Person.m */,
 				84B3B83620B2D27500C0B627 /* CopyObject.h */,
 				84B3B83720B2D27500C0B627 /* CopyObject.m */,
+				CF624C8E20BFF6C100D50AEF /* WYDBManager */,
 				391CC08D208080CB0092FB9C /* Main.storyboard */,
 				3945FA6C20A2ED5F00DF38D0 /* WYDBManager-PrefixHeader.pch */,
 				396A35FD20ABCCAA00C0BBB1 /* sources */,
@@ -192,6 +199,17 @@
 				F1082BB9F1AB91DFE4469531 /* Pods_WYDBManager.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF624C8E20BFF6C100D50AEF /* WYDBManager */ = {
+			isa = PBXGroup;
+			children = (
+				CF624C9120BFF6CA00D50AEF /* WYDBManager.h */,
+				CF624C9020BFF6CA00D50AEF /* WYDBManager.m */,
+				CF624C9220BFF6CA00D50AEF /* WYDBTool.h */,
+				CF624C8F20BFF6CA00D50AEF /* WYDBTool.m */,
+			);
+			path = WYDBManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,13 +352,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WYDBManager/Pods-WYDBManager-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CWSqlite/CWSqlite.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CWSqlite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 			);
@@ -377,8 +393,10 @@
 				84B3B83220B2D21000C0B627 /* Person.m in Sources */,
 				391CC08C208080CB0092FB9C /* ViewController.m in Sources */,
 				391CC097208080CB0092FB9C /* main.m in Sources */,
+				CF624C9420BFF6CA00D50AEF /* WYDBManager.m in Sources */,
 				84B3B83820B2D27500C0B627 /* CopyObject.m in Sources */,
 				391CC089208080CB0092FB9C /* AppDelegate.m in Sources */,
+				CF624C9320BFF6CA00D50AEF /* WYDBTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,6 +62,60 @@
     
     return propertyArr;
 }
++ (NSMutableArray *)getIvarTypeList:(NSString *)className
+{
+    NSArray *ignoreNames = nil;
+    
+    Class class = NSClassFromString(className);
+    
+    /**
+     忽略字段，须实现该类方法
+     */
+    if ([class respondsToSelector:NSSelectorFromString(@"ignoreColumnNames")]) {
+        
+        ignoreNames = ((NSArray * (*)(id, SEL))objc_msgSend)(class,NSSelectorFromString(@"ignoreColumnNames"));
+    }
+    
+    NSString * cacheKey = [NSString stringWithFormat:@"%@-ivarType",class];
+    
+    NSMutableArray *cacheIvarTypeListArray = [[WYCache shareInstance] objectForKey:cacheKey];
+    
+    if (cacheIvarTypeListArray) {
+        
+        return cacheIvarTypeListArray;
+    }
+    
+    unsigned int count;
+    
+    Ivar * vars = class_copyIvarList(NSClassFromString(className), &count);
+    
+    cacheIvarTypeListArray = [NSMutableArray array];
+    
+    for (int i = 0; i < count; i++) {
+        
+        Ivar var = vars[i];
+        
+        // 获取成员变量名称
+        NSString *ivarName = [NSString stringWithUTF8String:ivar_getName(var)];
+        
+        // 忽略字段
+        if ([ignoreNames containsObject:ivarName]) {
+            continue;
+        }
+        
+        NSString * type = [NSString stringWithUTF8String:ivar_getTypeEncoding(var)];
+        
+        type = [type stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"@\""]];
+        
+        [cacheIvarTypeListArray addObject:type];
+    }
+    
+    free(vars);
+    
+    [[WYCache shareInstance] setObject:cacheIvarTypeListArray forKey:cacheKey];
+    
+    return cacheIvarTypeListArray;
+}
 + (id)formatModelValue:(id)value key:(NSString *)key type:(NSString *)type set:(FMResultSet *) set isEncode:(BOOL)isEncode
 {
     
@@ -96,7 +150,7 @@
         }
     }
     
-    if ([type containsString:@"NSData"] || [type containsString:@"NSMutableData"]) {
+    if ([type containsString:@"NSData"] || [type containsString:@"NSMutableData"]) {// || [type containsString:@"MutableData"]
         
         if (isEncode) {
             
@@ -194,7 +248,9 @@
             
         }else{
             
-            return [NSKeyedUnarchiver unarchiveObjectWithData:set ? [set dataForColumn:key] : value];
+            id returnData = [NSKeyedUnarchiver unarchiveObjectWithData:set ? [set dataForColumn:key] : value];
+            
+            return returnData;
         }
     }
     
@@ -308,17 +364,22 @@
 }
 + (id)arrayWithData:(id)value key:(NSString *)key type:(NSString *)type set:(FMResultSet *) set
 {
-    NSArray * array = [NSKeyedUnarchiver unarchiveObjectWithData:[set dataForColumn:key]];
+    
+    NSData * data = [set dataForColumn:key];
+    
+    NSArray * array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
     NSMutableArray * dataArray = [array mutableCopy];
     
-    for (id value in array) {
+    for (NSInteger i = 0; i < array.count; i++) {
+        
+        id value = array[i];
         
         if ([value isKindOfClass:[NSData class]]) {
             
             id tempData = [self formatModelValue:value key:key type:NSStringFromClass([value class]) set:nil isEncode:NO];
             
-            [dataArray replaceObjectAtIndex:[array indexOfObject:value] withObject:tempData];
+            [dataArray replaceObjectAtIndex:i withObject:tempData];
         }
     }
     

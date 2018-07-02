@@ -10,6 +10,7 @@
 #import "FMDB.h"
 #import "WYDBTool.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
@@ -79,9 +80,9 @@ NSString * const descNameConnector = @"DescNameConnector";
 }
 + (void)deleteData:(id)model descName:(NSString *)descName
 {
-    [[WYDBManager shareInstance] deleteDBWithClassName:NSStringFromClass([model class]) descName:descName primaryValue:[[model valueForKey:[[model class] primaryKey]] integerValue] relation:relationE];
+    [[WYDBManager shareInstance] deleteDBWithClassName:NSStringFromClass([model class]) descName:descName primaryValue:[model valueForKey:[[model class] primaryKey]] relation:relationE];
 }
-+ (void)deleteData:(Class)tableClass descName:(NSString *)descName primaryValue:(NSInteger)primaryValue relation:(NSString *)relation
++ (void)deleteData:(Class)tableClass descName:(NSString *)descName primaryValue:(NSString *)primaryValue relation:(NSString *)relation
 {
     [[WYDBManager shareInstance] deleteDBWithClassName:NSStringFromClass(tableClass) descName:descName primaryValue:primaryValue relation:relation];
 }
@@ -105,7 +106,7 @@ NSString * const descNameConnector = @"DescNameConnector";
 {
     return [self selectWithTableClass:tableClass descName:descName primaryValue:0 relation:nil];
 }
-+ (NSMutableArray *)selectWithTableClass:(Class)tableClass descName:(NSString *)descName primaryValue:(NSInteger)primaryValue relation:(NSString *)relation
++ (NSMutableArray *)selectWithTableClass:(Class)tableClass descName:(NSString *)descName primaryValue:(NSString *)primaryValue relation:(NSString *)relation
 {
     
     NSMutableArray * arr = [NSMutableArray array];
@@ -252,21 +253,17 @@ NSString * const descNameConnector = @"DescNameConnector";
                     
                     NSArray * propertyArr = [[self class] getPropertyList:className];
                     
+                    NSArray * ivarTypeArr = [WYDBTool getIvarTypeList:className];
+                    
                     FMResultSet * set = [db executeQuery:trySql];
-                    
-                    unsigned int count;
-                    
-                    Ivar * vars = class_copyIvarList(NSClassFromString(className), &count);
                     
                     while ([set next]) {
                         
                         id obj = [[NSClassFromString(className) alloc] init];
                         
-                        for (int i = 0; i < count; i++) {
+                        for (int i = 0; i < ivarTypeArr.count; i++) {
                             
-                            Ivar var = vars[i];
-                            
-                            NSString * type = [NSString stringWithUTF8String:ivar_getTypeEncoding(var)];
+                            NSString * type = ivarTypeArr[i];
                             
                             if(![WYDBTool isObjectType:type]) {
                                 
@@ -285,9 +282,11 @@ NSString * const descNameConnector = @"DescNameConnector";
                     isSync = NO;
                 }
             }
-            if(isSync == NO){
+            if(isSync == NO){   //删表
                 
                 NSString *dropTabelSql = [NSString stringWithFormat:@"drop table %@",tName];
+                
+                NSLog(@"%@",dropTabelSql);
                 
                 [dropSqlArr addObject:dropTabelSql];
             }
@@ -325,29 +324,23 @@ NSString * const descNameConnector = @"DescNameConnector";
     
     NSArray * propertyArr = [[self class] getPropertyList:className];
     
-    unsigned int count;
+    NSArray * ivarTypeArr = [WYDBTool getIvarTypeList:className];
     
-    Ivar * vars = class_copyIvarList(NSClassFromString(className), &count);
-    
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < propertyArr.count; i++) {
         
-        Ivar var = vars[i];
+        NSString *ivarName = propertyArr[i];
         
-        NSString * type = [NSString stringWithUTF8String:ivar_getTypeEncoding(var)];
+        NSString * type = ivarTypeArr[i];
         
         if(![WYDBTool isObjectType:type] || [type containsString:@"NSRange"] || [type containsString:@"CGRect"] || [type containsString:@"CGPoint"] || [type containsString:@"CGSize"]) {
             
             continue;
         }
         
-        id data = object_getIvar(model, var);
+        id tempData = [WYDBTool formatModelValue:[model valueForKey:ivarName] key:ivarName type:type set:nil isEncode:YES];
         
-        id tempData = [WYDBTool formatModelValue:data key:[NSString stringWithUTF8String:ivar_getName(var)] type:type set:nil isEncode:YES];
-        
-        [tempModel setValue:tempData ? : @"" forKey:propertyArr[i]];
+        [tempModel setValue:tempData ? : @"" forKey:ivarName];
     }
-    
-    free(vars);
     
     return tempModel;
 }
@@ -389,21 +382,19 @@ NSString * const descNameConnector = @"DescNameConnector";
     
     NSString * sql1 = [NSString stringWithFormat:@"create table if not exists %@",[self tableName:className descName:descName]];
     
-    NSArray * propertyArr = [[self class] getPropertyList:className];
-    
     NSMutableString * sql2 = [NSMutableString string];
     
-    unsigned int count;
+    NSArray * propertyArr = [[self class] getPropertyList:className];
     
-    Ivar * vars = class_copyIvarList(NSClassFromString(className), &count);
+    NSArray * ivarTypeArr = [WYDBTool getIvarTypeList:className];
     
-    for (NSInteger i = 0; i < count; i++) {
+    for (NSInteger i = 0; i < propertyArr.count; i++) {
         
-        Ivar var = vars[i];
+        NSString * type = ivarTypeArr[i];
         
-        NSString * type = [NSString stringWithUTF8String:ivar_getTypeEncoding(var)];
+        NSString * ivarName = propertyArr[i];
         
-        (i == 0)?[sql2 appendFormat:@"%@ %@",propertyArr[i],[WYDBTool getSqlType:type]]:[sql2 appendFormat:@",%@ %@",propertyArr[i],[WYDBTool getSqlType:type]];
+        (i == 0)?[sql2 appendFormat:@"%@ %@",ivarName,[WYDBTool getSqlType:type]]:[sql2 appendFormat:@",%@ %@",ivarName,[WYDBTool getSqlType:type]];
     }
     
     NSString * sql = [NSString stringWithFormat:@"%@(%@ ,primary key(%@))",sql1,sql2,primaryKey];
@@ -412,7 +403,7 @@ NSString * const descNameConnector = @"DescNameConnector";
         
         if (![db executeUpdate:sql]) {
             
-            NSLog(@"create table%@ error",className);
+            NSLog(@"create table %@ error",[self tableName:className descName:descName]);
         }
     }];
 }
@@ -426,7 +417,7 @@ NSString * const descNameConnector = @"DescNameConnector";
     
     NSString * className = NSStringFromClass(object_getClass(model));
     
-    [self createTabelWithClassName:className descName:className];
+    [self createTabelWithClassName:className descName:descName];
     
     NSArray * propertyArr = [[self class] getPropertyList:className];
     
@@ -467,13 +458,13 @@ NSString * const descNameConnector = @"DescNameConnector";
         }
     }];
 }
-- (void)deleteDBWithClassName:(NSString *)className descName:(NSString *)descName primaryValue:(NSInteger)primaryValue relation:(NSString *)relation
+- (void)deleteDBWithClassName:(NSString *)className descName:(NSString *)descName primaryValue:(NSString *)primaryValue relation:(NSString *)relation
 {
     NSString * sql = [NSString stringWithFormat:@"delete from %@",[self tableName:className descName:descName]];
     
     if (!([relation isEqualToString:@"*"] || relation.length == 0 || relation == nil)) {
         
-        sql = [NSString stringWithFormat:@"%@ where %@ %@ '%zd'",sql,[NSClassFromString(className) primaryKey],relation,primaryValue];
+        sql = [NSString stringWithFormat:@"%@ where %@ %@ '%@'",sql,[NSClassFromString(className) primaryKey],relation,primaryValue];
     }
     
     [_queue inDatabase:^(FMDatabase *db) {
@@ -511,7 +502,7 @@ NSString * const descNameConnector = @"DescNameConnector";
             [argumentArr addObject:[model valueForKey:propertyArr[i]]];
     }
     
-    NSString * sql = [NSString stringWithFormat:@"%@%@ where %@=%zd",sql1,key,[[model class] primaryKey],[[model valueForKey:[[model class] primaryKey]] integerValue]];
+    NSString * sql = [NSString stringWithFormat:@"%@ %@ where %@ = '%@'",sql1,key,[[model class] primaryKey],[model valueForKey:[[model class] primaryKey]]];
     
     [_queue inDatabase:^(FMDatabase *db) {
         
@@ -573,7 +564,7 @@ NSString * const descNameConnector = @"DescNameConnector";
             [argumentArr addObject:keys[i]];
     }
     
-    NSString * sql = [NSString stringWithFormat:@"%@%@ where %@=%zd",sql1,key,[[model class] primaryKey],[[model valueForKey:[[model class] primaryKey]] integerValue]];
+    NSString * sql = [NSString stringWithFormat:@"%@%@ where %@=%@",sql1,key,[[model class] primaryKey],[model valueForKey:[[model class] primaryKey]]];
     
     [_queue inDatabase:^(FMDatabase *db) {
         
@@ -582,23 +573,21 @@ NSString * const descNameConnector = @"DescNameConnector";
         }
     }];
 }
-- (NSMutableArray *)selectFromDBWithclassName:(NSString *)className descName:(NSString *)descName primaryValue:(NSInteger)primaryValue relation:(NSString *)relation
+- (NSMutableArray *)selectFromDBWithclassName:(NSString *)className descName:(NSString *)descName primaryValue:(NSString *)primaryValue relation:(NSString *)relation
 {
     
     NSString * sql = [NSString stringWithFormat:@"select * from %@",[self tableName:className descName:descName]];
     
     if (!([relation isEqualToString:@"*"] || relation.length == 0 || relation == nil)) {
         
-        sql = [NSString stringWithFormat:@"%@ where %@ %@ '%zd'",sql,[NSClassFromString(className) primaryKey],relation,primaryValue];
+        sql = [NSString stringWithFormat:@"%@ where %@ %@ '%@'",sql,[NSClassFromString(className) primaryKey],relation,primaryValue];
     }
     
     NSArray * propertyArr = [[self class] getPropertyList:className];
     
     __block NSMutableArray * arr = [NSMutableArray array];
     
-    unsigned int count;
-    
-    Ivar * vars = class_copyIvarList(NSClassFromString(className), &count);
+    NSArray * ivarTypeArr = [WYDBTool getIvarTypeList:className];
     
     [_queue inDatabase:^(FMDatabase *db) {
         
@@ -608,11 +597,9 @@ NSString * const descNameConnector = @"DescNameConnector";
             
             id obj = [[NSClassFromString(className) alloc] init];
             
-            for (int i = 0; i < count; i++) {
+            for (int i = 0; i < propertyArr.count; i++) {
                 
-                Ivar var = vars[i];
-                
-                NSString * type = [NSString stringWithUTF8String:ivar_getTypeEncoding(var)];
+                NSString * type = ivarTypeArr[i];
                 
                 if(![WYDBTool isObjectType:type]) {
                     
@@ -645,9 +632,7 @@ NSString * const descNameConnector = @"DescNameConnector";
     
     __block NSMutableArray * arr = [NSMutableArray array];
     
-    unsigned int count;
-    
-    Ivar * vars = class_copyIvarList(NSClassFromString(className), &count);
+    NSArray * ivarTypeArr = [WYDBTool getIvarTypeList:className];
     
     [_queue inDatabase:^(FMDatabase *db) {
         
@@ -657,11 +642,9 @@ NSString * const descNameConnector = @"DescNameConnector";
             
             id obj = [[NSClassFromString(className) alloc] init];
             
-            for (int i = 0; i < count; i++) {
+            for (int i = 0; i < propertyArr.count; i++) {
                 
-                Ivar var = vars[i];
-                
-                NSString * type = [NSString stringWithUTF8String:ivar_getTypeEncoding(var)];
+                NSString * type = ivarTypeArr[i];
                 
                 if(![WYDBTool isObjectType:type]) {
                     

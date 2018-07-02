@@ -63,7 +63,7 @@ FOUNDATION_EXTERN  NSString * const relationLE;             //less or equal
  *  @param primaryValue 主键参考值
  *  @param relation     被删除的文件的主键与参考值之间的关系
  */
-+ (void)deleteData:(Class)tableClass descName:(NSString *)descName primaryValue:(NSInteger)primaryValue relation:(NSString *)relation;
++ (void)deleteData:(Class)tableClass descName:(NSString *)descName primaryValue:(NSString *)primaryValue relation:(NSString *)relation;
 #pragma mark - 改
 /**
  
@@ -115,7 +115,7 @@ FOUNDATION_EXTERN  NSString * const relationLE;             //less or equal
  *  @param relation     查询文件的主键与参考值之间的关系   如>,<,>=,<=,==
  *  @return 指定表中要查询的的数据数组
  */
-+ (NSMutableArray *)selectWithTableClass:(Class)tableClass descName:(NSString *)descName primaryValue:(NSInteger)primaryValue relation:(NSString *)relation;
++ (NSMutableArray *)selectWithTableClass:(Class)tableClass descName:(NSString *)descName primaryValue:(NSString *)primaryValue relation:(NSString *)relation;
 
 /*
  *  分页查询数据

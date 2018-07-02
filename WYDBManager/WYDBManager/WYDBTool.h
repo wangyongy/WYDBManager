@@ -20,6 +20,13 @@
  */
 + (NSMutableArray *)getPropertyList:(NSString *)className;
 /**
+ *  获取类的属性类型列表，会将已经获取过的属性类型列表缓存起来
+ *
+ *  @param className 需要获取模型列表的类名
+ *  @return 类的属性类型列表数组
+ */
++ (NSMutableArray *)getIvarTypeList:(NSString *)className;
+/**
  *  转换读和存对应的数据类型
  
  *  @param value        属性值
